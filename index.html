@@ -4,13 +4,396 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="stylesheet" href="/src/style.css" />
     <title>Vite App</title>
   </head>
   <body>
-    <div class="container">
-      <h1 class="text-6xl font-sans-serif">Hello world</h1>
+    <div class="overflow-x-hidden">
+      <!-- Navbar -->
+      <div
+        class="mx-auto right-0 pt-0 transition absolute top-0 left-0 z-50 bg-white"
+        id="navbar"
+        data-aos="fade-down"
+      >
+        <!-- Navigation Bar -->
+        <nav
+          class="relative flex h-full justify-between menu py-3"
+          data-aos="fade-down"
+        >
+          <div
+            class="container w-full flex items-center justify-between"
+            id="nav-content"
+          >
+            <!-- Logo Section -->
+            <a href="#" class="flex items-center gap-1">
+              <img
+                src="./src/assets/images/healthguard-logo.jpg"
+                alt="healthguard-logo"
+              />
+            </a>
+
+            <!-- Hamburger Icon (Visible on Mobile) -->
+            <div class="flex items-center xl:hidden">
+              <span id="menu-toggle" class="text-4xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+              </span>
+            </div>
+
+            <!-- Navbar Links -->
+            <ul
+              class="absolute left-0 top-[99%] max-h-0 w-full divide-y divide-gray-200 overflow-hidden bg-white text-base font-medium shadow-xl transition-all duration-500 ease-in-out xl:static xl:mt-0 xl:flex xl:max-h-full xl:w-auto xl:gap-6 xl:divide-y-0 xl:bg-transparent xl:py-0 xl:shadow-none"
+            >
+              <!-- Individual Navbar Link -->
+              <li>
+                <a
+                  href="#header"
+                  class="mx-auto block px-4 py-4 transition hover:bg-primary hover:text-white xl:p-0 xl:contain-none xl:hover:bg-transparent xl:hover:text-primary relative group"
+                >
+                  About
+                  <div
+                    class="absolute inline-block left-0 right-0 mx-auto bottom-0 h-0 xl:h-px w-0 group-hover:w-full bg-primary transition-[width]"
+                  ></div>
+                </a>
+              </li>
+              <!-- Individual Navbar Link -->
+              <li>
+                <a
+                  href="#services"
+                  class="mx-auto block px-4 py-4 transition hover:bg-primary hover:text-white xl:p-0 xl:contain-none xl:hover:bg-transparent xl:hover:text-primary relative group"
+                >
+                  Insurance
+                  <div
+                    class="absolute inline-block left-0 right-0 mx-auto bottom-0 h-0 xl:h-px w-0 group-hover:w-full bg-primary transition-[width]"
+                  ></div>
+                </a>
+              </li>
+
+              <!-- Individual Navbar Link -->
+              <li>
+                <a
+                  href="#steps"
+                  class="mx-auto block px-4 py-4 transition hover:bg-primary hover:text-white xl:p-0 xl:contain-none xl:hover:bg-transparent xl:hover:text-primary relative group"
+                >
+                  Service
+                  <div
+                    class="absolute inline-block left-0 right-0 mx-auto bottom-0 h-0 xl:h-px w-0 group-hover:w-full bg-primary transition-[width]"
+                  ></div>
+                </a>
+              </li>
+              <!-- Individual Navbar Link -->
+              <li>
+                <a
+                  href="#faq"
+                  class="mx-auto block px-4 py-4 transition hover:bg-primary hover:text-white xl:p-0 xl:contain-none xl:hover:bg-transparent xl:hover:text-primary relative group"
+                >
+                  Contact Us
+                  <div
+                    class="absolute inline-block left-0 right-0 mx-auto bottom-0 h-0 xl:h-px w-0 group-hover:w-full bg-primary transition-[width]"
+                  ></div>
+                </a>
+              </li>
+            </ul>
+
+            <!-- Register Button (Visible on larger screens) -->
+            <a href="#contact" class="hidden xl:inline-block">
+              <button class="black">Get Started</button>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <!-- <div class="flex flex-col gap-10 xl:gap-[7.5rem]"> -->
+      <aside></aside>
+      <aside></aside>
+      <aside class="xl:hidden"></aside>
+
+      <!-- Hero Section -->
+
+      <header class="container">
+        <!-- <input type="checkbox" id="video-check" /> -->
+        <aside class="relative xl:hidden mb-5">
+          <img
+            src="./src/assets/images/hero-image.jpeg"
+            alt="hero"
+            class="rounded-md xl:rounded-3xl"
+            data-aos="fade-right"
+          />
+          <label
+            id="playIcon2"
+            for="video-check"
+            class="absolute left-0 right-0 top-0 bottom-0 m-auto flex justify-center items-center cursor-pointer text-white bg-white bg-opacity-40 w-20 lg:w-40 aspect-square rounded-full border"
+            data-aos="fade-in"
+            data-aos-delay="1000"
+          >
+            <i class="fas fa-play text-4xl lg:text-6xl"></i>
+          </label>
+        </aside>
+        <h1 class="font-semibold" data-aos="fade-down">
+          Reliable Health Coverage,
+          <span class="xl:hidden">Tailored For You</span>
+        </h1>
+        <div class="hidden xl:flex items-center justify-between gap-4">
+          <h1 class="font-semibold" data-aos="fade-right">Tailored For You</h1>
+          <!-- Avatars Section with Text -->
+          <div
+            class="hidden xl:flex items-center space-x-4 text-white rounded-lg"
+          >
+            <!-- Profile Avatars -->
+            <div class="flex -space-x-2">
+              <!-- Avatar 1 -->
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                alt="Avatar 1"
+                class="w-10 h-10 xl:w-14 xl:h-14 rounded-full border-4 border-white"
+                data-aos="fade-left"
+                data-aos-delay="100"
+              />
+              <!-- Avatar 2 -->
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                alt="Avatar 2"
+                class="w-10 h-10 xl:w-14 xl:h-14 rounded-full border-4 border-white"
+                data-aos="fade-left"
+                data-aos-delay="150"
+              />
+              <!-- Avatar 3 -->
+              <img
+                src="https://randomuser.me/api/portraits/men/50.jpg"
+                alt="Avatar 3"
+                class="w-10 h-10 xl:w-14 xl:h-14 rounded-full border-4 border-white"
+                data-aos="fade-left"
+                data-aos-delay="200"
+              />
+              <!-- More Icon -->
+              <div
+                class="w-10 h-10 xl:w-14 xl:h-14 rounded-full bg-gray-100 flex justify-center items-center text-black border-4 border-white"
+                data-aos="fade-left"
+                data-aos-delay="250"
+              >
+                +
+              </div>
+            </div>
+
+            <!-- Text Content -->
+            <div
+              class="text-black flex items-center gap-2"
+              data-aos="fade-left"
+              data-aos-delay="250"
+            >
+              <p class="text-xs">Last Month</p>
+              <i class="fas fa-arrow-alt-circle-up"></i>
+              <p>95%</p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="grid items-center grid-cols-1 xl:grid-cols-2 gap-8 mt-4 xl:mt-8"
+        >
+          <aside>
+            <p class="text-grey capitalize" data-aos="fade-right">
+              Experience the peace of mind to live confidently and securely with
+              our comprehensive, flexible healthcare insurance plans that adapt
+              to your needs
+            </p>
+
+            <div class="flex my-4 xl:mt-8 xl:mb-12 gap-6">
+              <div data-aos="fade-right" data-aos-delay="100">
+                <button class="primary">Consultation</button>
+              </div>
+              <div data-aos="fade-right" data-aos-delay="50">
+                <button>
+                  Learn More <i class="fas fa-long-arrow-alt-right"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
+              <div
+                class="p-6 bg-primary-light rounded-2xl"
+                data-aos="fade-right"
+                data-aos-delay="150"
+              >
+                <h3 class="text-primary font-extrabold">50+</h3>
+                <p class="mt-2">Network Hospitals</p>
+              </div>
+              <div
+                class="p-6 bg-primary-light rounded-2xl"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
+                <h3 class="text-primary font-extrabold">99%</h3>
+                <p class="mt-2">Happy Clients</p>
+              </div>
+              <div
+                class="p-6 bg-primary-light rounded-2xl"
+                data-aos="fade-right"
+                data-aos-delay="50"
+              >
+                <h3 class="text-primary font-extrabold">20+</h3>
+                <p class="mt-2">Years of Service</p>
+              </div>
+            </div>
+          </aside>
+
+          <aside class="relative hidden xl:block">
+            <!-- <input type="checkbox" id="video-check" hidden /> -->
+            <img
+              src="./src/assets/images/hero-image.jpeg"
+              alt="hero"
+              class="xl:rounded-3xl"
+              data-aos="fade-left"
+            />
+            <label
+              for="video-check"
+              class="absolute left-0 right-0 top-0 bottom-0 m-auto flex justify-center items-center cursor-pointer text-white bg-white bg-opacity-40 w-20 aspect-square rounded-full border"
+              id="playIcon"
+              data-aos="fade-in"
+              data-aos-delay="1000"
+            >
+              <i class="fas fa-play text-4xl"></i>
+            </label>
+          </aside>
+        </div>
+      </header>
+
+      <!-- Video Modal -->
+      <div
+        id="videoModal"
+        class="fixed inset-0 z-[99999999] hidden items-center justify-center bg-black bg-opacity-70"
+      >
+        <div class="relative max-w-4xl lg:w-full">
+          <!-- Close Button -->
+          <button
+            id="closeModal"
+            class="absolute -top-16 right-0 inline-block aspect-square w-12 lg:w-24 rounded-full border border-primary p-0 text-5xl text-primary transition hover:bg-primary hover:text-white lg:-right-14 lg:-top-32 xl:w-12 xl:-right-16 xl:-top-16"
+          >
+            &times;
+          </button>
+          <!-- Video Element -->
+          <div class="aspect-video bg-black">
+            <iframe
+              id="videoFrame"
+              class="h-full w-full"
+              src=""
+              frameborder="0"
+              allow="autoplay; fullscreen"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personal Touch Section -->
+      <section class="container">
+        <!-- Grid Layout: Two Columns on Large Screens, Single Column on Small Screens -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 items-center">
+          <!-- Left Side: Heading with AOS Animation -->
+          <aside data-aos="fade-right">
+            <h2 class="font-extrabold">Protection with a Personal Touch.</h2>
+          </aside>
+
+          <!-- Right Side: Description Paragraph with AOS Animation -->
+          <aside data-aos="fade-left">
+            <p class="capitalize mt-4 lg:mt-0">
+              Our mission is to make health insurance more human, approachable,
+              and designed around you. From personalized plans to dedicated
+              support, we're here to ensure you and your loved ones have the
+              protection and care you deserve, every step of the way.
+            </p>
+          </aside>
+        </div>
+
+        <!-- Image Section with Overlay and Swiper -->
+        <div class="relative mt-8 rounded-md xl:rounded-3xl overflow-hidden">
+          <!-- Main Image with AOS Animation -->
+          <img
+            src="./src/assets/images/personal-touch.jpeg"
+            alt="personal-touch"
+            class="aspect-video lg:aspect-[1240/452] object-cover object-center lg:object-[0_40%]"
+            data-aos="fade-up"
+          />
+          <!-- Overlay with Text and Swiper -->
+          <div
+            class="absolute left-0 top-0 px-2 pb-2 lg:px-7 lg:pb-7 flex items-end w-full h-full bg-primary bg-opacity-20 text-white"
+            data-aos="fade-up"
+          >
+            <!-- Slider main container -->
+            <div class="swiper" data-aos="fade-right">
+              <!-- Swiper Wrapper: Contains All Slides -->
+              <div class="swiper-wrapper">
+                <!-- Slide 1: Individual Health Plans -->
+                <div
+                  class="swiper-slide bg-primary p-2 rounded-lg xl:rounded-2xl"
+                >
+                  <div class="flex items-center gap-3 lg:gap-4 xl:gap-6">
+                    <!-- Icon Container -->
+                    <div
+                      class="w-10 xl:w-16 flex items-center justify-center aspect-square bg-white rounded-lg xl:rounded-2xl"
+                    >
+                      <img
+                        src="./src/assets/icons/personal-touch/Rectangle 4272.jpg"
+                        alt="Individual Health Plans"
+                        class="w-8 xl:w-14"
+                      />
+                    </div>
+                    <!-- Slide Title -->
+                    <h6 class="font-sans-serif">Individual Health Plans</h6>
+                  </div>
+                </div>
+
+                <!-- Slide 2: Family Coverage -->
+                <div
+                  class="swiper-slide bg-primary p-2 rounded-lg xl:rounded-2xl"
+                >
+                  <div class="flex items-center gap-3 lg:gap-4 xl:gap-6">
+                    <!-- Icon Container -->
+                    <div
+                      class="w-10 xl:w-16 flex items-center justify-center aspect-square bg-white rounded-lg xl:rounded-2xl"
+                    >
+                      <img
+                        src="./src/assets/icons/personal-touch/Rectangle 4272.jpg"
+                        alt="Family Coverage"
+                        class="w-8 xl:w-14"
+                      />
+                    </div>
+                    <!-- Slide Title -->
+                    <h6 class="font-sans-serif">Family Coverage</h6>
+                  </div>
+                </div>
+
+                <!-- Slide 3: Medicare Solutions -->
+                <div
+                  class="swiper-slide bg-primary p-2 rounded-lg xl:rounded-2xl"
+                >
+                  <div class="flex items-center gap-3 lg:gap-4 xl:gap-6">
+                    <!-- Icon Container -->
+                    <div
+                      class="w-10 xl:w-16 flex items-center justify-center aspect-square bg-white rounded-lg xl:rounded-2xl"
+                    >
+                      <img
+                        src="./src/assets/icons/personal-touch/Rectangle 4272.jpg"
+                        alt="Medicare Solutions"
+                        class="w-8 xl:w-14"
+                      />
+                    </div>
+                    <!-- Slide Title -->
+                    <h6 class="font-sans-serif">Medicare Solutions</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
+
+    <script
+      src="https://kit.fontawesome.com/b50fc748ca.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

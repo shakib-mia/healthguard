@@ -1,4 +1,84 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply text-base font-sans-serif;
+}
+
+.menu ul {
+  /* max-height: 0; */
+  overflow: hidden;
+  transition: max-height 0.5s ease-in;
+  @apply max-h-0 xl:max-h-max;
+}
+
+.menu ul.open {
+  max-height: 500px; /* Adjust based on your menu's content */
+}
+
+::-webkit-scrollbar {
+  @apply w-0 h-0;
+}
+
+button {
+  @apply px-7 py-4 rounded-md text-sm font-semibold transition duration-200 ease-in-out lg:text-base flex items-center gap-2 text-primary hover:shadow-md active:shadow;
+}
+
+button.black {
+  @apply bg-black text-white;
+}
+
+button.primary {
+  @apply bg-primary text-white;
+}
+
+/* styles.css */
+/* H1 Styles */
+h1 {
+  @apply font-serif 2xl:text-[6.875rem] xl:text-[6rem] lg:text-[5.625rem] md:text-[5rem] sm:text-[4.375rem] xs:text-[3.5rem] text-[2.5rem] leading-[1.2];
+}
+
+/* H2 Styles */
+h2 {
+  @apply font-serif 2xl:text-[4rem] xl:text-[3.5rem] lg:text-[3.25rem] md:text-[3rem] sm:text-[2.75rem] xs:text-[2.25rem] text-[2rem] leading-[1.3];
+}
+
+/* H3 Styles - Improved readability for smaller devices */
+h3 {
+  @apply font-serif 2xl:text-[2rem] xl:text-[1.875rem] lg:text-[1.75rem] md:text-[1.625rem] sm:text-[1.5rem] xs:text-[1.375rem] text-[1.375rem] leading-[1.4];
+}
+
+/* H4 Styles - Improved readability for smaller devices */
+h4 {
+  @apply font-serif 2xl:text-[1.75rem] xl:text-[1.625rem] lg:text-[1.5rem] md:text-[1.375rem] sm:text-[1.25rem] xs:text-[1.125rem] text-[1.125rem] leading-[1.5];
+}
+
+/* H5 Styles - Improved readability for smaller devices */
+h5 {
+  @apply font-serif 2xl:text-[1.5rem] xl:text-[1.375rem] lg:text-[1.25rem] md:text-[1.125rem] sm:text-[1rem] xs:text-[0.925rem] text-[0.875rem] leading-[1.6];
+}
+
+/* H6 Styles - Improved readability for smaller devices */
+h6 {
+  @apply font-serif text-base xl:text-[1.25rem] leading-[1.6];
+}
+
+/* 
+ h1 -110
+ h2 - 64
+ h3 - 32
+ h4 - 28
+ h5 - 24
+ h6 - 20
+
+*/
+
+section {
+  @apply py-5 xl:py-14;
+}
+
+header {
+  @apply pt-28 xl:pt-44 pb-5 xl:pb-14;
+}
