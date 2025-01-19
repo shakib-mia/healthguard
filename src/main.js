@@ -1,7 +1,7 @@
 import AOS from "aos";
 import Lenis from "lenis";
 import Swiper from "swiper";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 
 // Initialize Lenis
@@ -127,9 +127,9 @@ videoModal.addEventListener("click", (event) => {
 const swiper = new Swiper(".swiper", {
   modules: [Autoplay],
   speed: 400,
-  autoplay: {
-    delay: 5000,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  // },
   breakpoints: {
     // When the viewport is 768px or wider (PC screens)
     1140: {
@@ -146,4 +146,34 @@ const swiper = new Swiper(".swiper", {
       slidesPerView: 1, // Show 1 item
     },
   },
+});
+
+// Swiper
+const servicesSwiper = new Swiper("#services .swiper", {
+  modules: [Autoplay, Pagination],
+  speed: 400,
+  autoplay: {
+    delay: 5000,
+  },
+  breakpoints: {
+    1140: {
+      slidesPerView: 3,
+      spaceBetween: 26,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 26,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
+servicesSwiper.on("slideChangeTransitionEnd", () => {
+  servicesSwiper.update(); // Force state update after swiping
 });
