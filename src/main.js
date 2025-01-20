@@ -241,3 +241,5 @@ document.querySelectorAll(".accordion-header").forEach((header) => {
     }
   });
 });
+
+document.getElementById("year").innerText = new Date().getFullYear();

@@ -23,19 +23,23 @@ body {
 }
 
 button {
-  @apply px-7 py-4 rounded-md text-sm font-semibold transition duration-200 ease-in-out lg:text-base flex items-center gap-2 text-primary hover:shadow-md active:shadow;
+  @apply px-7 py-4 rounded-md text-sm font-semibold transition duration-200 ease-in-out lg:text-base flex items-center gap-2 text-primary hover:shadow-md active:shadow whitespace-nowrap;
 }
 
 button.black {
-  @apply bg-black text-white;
+  @apply bg-black text-white hover:bg-white border hover:border-black hover:text-black;
 }
 
 button.primary {
-  @apply bg-primary text-white;
+  @apply bg-primary border text-white border-primary hover:bg-white hover:text-primary;
 }
 
 button.white {
-  @apply bg-white text-primary;
+  @apply bg-white text-primary hover:bg-primary hover:!text-white;
+}
+
+button.bordered {
+  @apply border border-primary text-primary hover:bg-primary hover:text-white;
 }
 
 /* styles.css */
@@ -79,7 +83,8 @@ h6 {
 
 */
 
-section {
+section,
+footer {
   @apply py-7 xl:py-14;
 }
 
