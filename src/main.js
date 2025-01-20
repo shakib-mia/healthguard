@@ -174,6 +174,70 @@ const servicesSwiper = new Swiper("#services .swiper", {
   },
 });
 
+// Swiper
+const testimonialSwiper = new Swiper("#testimonial .swiper", {
+  modules: [Autoplay, Pagination],
+  speed: 400,
+  autoplay: {
+    delay: 5000,
+  },
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 26,
+    },
+    0: {
+      slidesPerView: 1,
+    },
+  },
+  pagination: {
+    el: "#testimonial .swiper-pagination",
+    clickable: true,
+  },
+});
+
 servicesSwiper.on("slideChangeTransitionEnd", () => {
   servicesSwiper.update(); // Force state update after swiping
+});
+// JavaScript for Accordion with + and - Toggle
+document.querySelectorAll(".accordion-header").forEach((header) => {
+  header.addEventListener("click", function () {
+    const content = this.nextElementSibling;
+    const icon = this.querySelector(".accordion-icon");
+    const isOpen = content.classList.contains("h-screen");
+
+    // Close all accordion items
+    document.querySelectorAll(".accordion-content").forEach((item) => {
+      item.classList.add("h-0");
+      item.classList.remove("h-screen");
+      const itemIcon =
+        item.previousElementSibling.querySelector(".accordion-icon");
+
+      itemIcon.textContent = "+";
+      item.previousElementSibling.classList.remove("bg-primary-light");
+      itemIcon.classList.add("bg-primary-light");
+      itemIcon.classList.remove("bg-white");
+      item.parentElement.classList.remove("border-primary");
+    });
+
+    // Toggle the clicked item
+    if (!isOpen) {
+      content.classList.remove("h-0");
+      content.classList.add("h-screen");
+      icon.textContent = "-";
+      icon.classList.remove("bg-primary-light");
+      icon.classList.add("bg-white");
+      header.classList.add("bg-primary-light");
+      content.classList.add("bg-primary-light");
+      header.parentElement.classList.add("border-primary");
+    } else {
+      icon.textContent = "+";
+      this.classList.remove("bg-primary-light");
+      this.classList.remove("border");
+      icon.classList.add("bg-primary-light");
+      icon.classList.remove("bg-white");
+      header.classList.remove("bg-primary-light");
+      header.parentElement.classList.remove("border-primary");
+    }
+  });
 });

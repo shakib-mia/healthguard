@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-base font-sans-serif;
+  @apply text-sm lg:text-base font-sans-serif;
 }
 
 .menu ul {
@@ -32,6 +32,10 @@ button.black {
 
 button.primary {
   @apply bg-primary text-white;
+}
+
+button.white {
+  @apply bg-white text-primary;
 }
 
 /* styles.css */
@@ -84,7 +88,7 @@ header {
 }
 
 #services .swiper-slide {
-  @apply p-6 bg-primary-light;
+  @apply p-2 md:p-4 xl:p-6 bg-primary-light;
 }
 
 #services .swiper-slide-next {
@@ -108,14 +112,14 @@ header {
   @apply stroke-white;
 }
 
-/* #services .swiper-pagination-bullet {
-  @apply inline-block bg-black bg-opacity-15 w-4 aspect-square rounded-full cursor-pointer;
+.swiper-pagination-bullet {
+  @apply inline-block bg-black bg-opacity-15 w-4 h-4 aspect-square rounded-full cursor-pointer transition-[width_height] duration-500;
 }
 
-#services .swiper-pagination-bullet-active {
-  @apply inline-flex items-center justify-center w-6 aspect-square rounded-full border border-spacing-10 border-black after:w-4 after:aspect-square after:bg-black after:inline-block after:rounded-full bg-white;
-} */
+.swiper-pagination-bullet-active {
+  @apply inline-flex items-center justify-center w-6 h-6 aspect-square rounded-full border border-spacing-10 border-black after:w-4 after:aspect-square after:bg-black after:inline-block after:rounded-full bg-white;
+}
 
-#services .swiper-pagination {
-  @apply flex justify-center gap-2;
+.swiper-pagination {
+  @apply items-center justify-center gap-2;
 }
