@@ -12,6 +12,7 @@ const lenis = new Lenis({
 AOS.init({
   once: true,
   duration: 1000,
+  offset: 0,
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -243,3 +244,29 @@ document.querySelectorAll(".accordion-header").forEach((header) => {
 });
 
 document.getElementById("year").innerText = new Date().getFullYear();
+
+// Select all anchor tags within the navigation menu
+document.querySelectorAll("nav a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    // Prevent the default action of the link
+    e.preventDefault();
+
+    // Get the target section's ID from the href attribute
+    const targetId = this.getAttribute("href").slice(1); // Remove the # symbol
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+      // Close the menu
+      if (window.innerWidth < 1024) {
+        const menu = document.querySelector("#menu ul");
+        menu.classList.remove("open");
+      }
+
+      // Scroll to the target section smoothly
+      targetSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  });
+});
