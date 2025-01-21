@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-sm lg:text-base font-sans-serif;
+  @apply font-sans-serif text-lg lg:text-base;
 }
 
 .menu ul {
@@ -19,19 +19,19 @@ body {
 }
 
 ::-webkit-scrollbar {
-  @apply w-0 h-0;
+  @apply h-0 w-0;
 }
 
 button {
-  @apply px-7 py-4 rounded-md text-sm font-semibold transition duration-200 ease-in-out lg:text-base flex items-center gap-2 text-primary hover:shadow-md active:shadow whitespace-nowrap;
+  @apply flex items-center gap-2 whitespace-nowrap rounded-md px-7 py-4 text-sm font-semibold text-primary transition duration-200 ease-in-out hover:shadow-md active:shadow lg:text-base;
 }
 
 button.black {
-  @apply bg-black text-white hover:bg-white border hover:border-black hover:text-black;
+  @apply border bg-black text-white hover:border-black hover:bg-white hover:text-black;
 }
 
 button.primary {
-  @apply bg-primary border text-white border-primary hover:bg-white hover:text-primary;
+  @apply border border-primary bg-primary text-white hover:bg-white hover:text-primary;
 }
 
 button.white {
@@ -45,32 +45,32 @@ button.bordered {
 /* styles.css */
 /* H1 Styles */
 h1 {
-  @apply font-serif 2xl:text-[6.875rem] xl:text-[6rem] lg:text-[5.625rem] md:text-[5rem] sm:text-[4.375rem] xs:text-[3.5rem] text-[2.5rem] leading-[1.2];
+  @apply font-serif text-[2.5rem] leading-[1.2] xs:text-[3.5rem] sm:text-[4.375rem] md:text-[5rem] lg:text-[5.625rem] xl:text-[6rem] 2xl:text-[6.875rem];
 }
 
 /* H2 Styles */
 h2 {
-  @apply font-serif 2xl:text-[4rem] xl:text-[3.5rem] lg:text-[3.25rem] md:text-[3rem] sm:text-[2.75rem] xs:text-[2.25rem] text-[1.75rem] leading-[1.3];
+  @apply font-serif text-[2rem] leading-[1.3] xs:text-[2.25rem] sm:text-[2.75rem] md:text-[3rem] lg:text-[3.25rem] xl:text-[3.5rem] 2xl:text-[4rem];
 }
 
 /* H3 Styles - Improved readability for smaller devices */
 h3 {
-  @apply font-serif 2xl:text-[2rem] xl:text-[1.875rem] lg:text-[1.75rem] md:text-[1.625rem] sm:text-[1.5rem] xs:text-[1.375rem] text-[1.375rem] leading-[1.4];
+  @apply font-serif text-[1.375rem] leading-[1.4] xs:text-[1.375rem] sm:text-[1.5rem] md:text-[1.625rem] lg:text-[1.75rem] xl:text-[1.875rem] 2xl:text-[2rem];
 }
 
 /* H4 Styles - Improved readability for smaller devices */
 h4 {
-  @apply font-serif 2xl:text-[1.75rem] xl:text-[1.625rem] lg:text-[1.5rem] md:text-[1.375rem] sm:text-[1.25rem] xs:text-[1.125rem] text-[1.125rem] leading-[1.5];
+  @apply font-serif text-[1.125rem] leading-[1.5] xs:text-[1.125rem] sm:text-[1.25rem] md:text-[1.375rem] lg:text-[1.5rem] xl:text-[1.625rem] 2xl:text-[1.75rem];
 }
 
 /* H5 Styles - Improved readability for smaller devices */
 h5 {
-  @apply font-serif 2xl:text-[1.5rem] xl:text-[1.375rem] lg:text-[1.25rem] text-[1.125rem] leading-[1.6];
+  @apply font-serif text-[1.125rem] leading-[1.6] lg:text-[1.25rem] xl:text-[1.375rem] 2xl:text-[1.5rem];
 }
 
 /* H6 Styles - Improved readability for smaller devices */
 h6 {
-  @apply font-serif text-base xl:text-[1.25rem] leading-[1.6];
+  @apply font-serif text-2xl leading-[1.6] xl:text-[1.25rem];
 }
 
 /* 
@@ -89,15 +89,15 @@ footer {
 }
 
 header {
-  @apply pt-28 xl:pt-44 pb-5 xl:pb-14;
+  @apply pb-5 pt-28 xl:pb-14 xl:pt-44;
 }
 
 #services .swiper-slide {
-  @apply p-2 md:p-4 xl:p-6 bg-primary-light;
+  @apply bg-primary-light p-2 md:p-4 xl:p-6;
 }
 
 #services .swiper-slide-next {
-  @apply xl:!bg-primary transition xl:!text-white;
+  @apply transition xl:!bg-primary xl:!text-white;
 }
 
 #services .swiper-slide path,
@@ -110,7 +110,7 @@ header {
 }
 
 #services .swiper-slide-active {
-  @apply bg-primary transition lg:bg-primary-light text-white lg:text-black;
+  @apply bg-primary text-white transition lg:bg-primary-light lg:text-black;
 }
 
 #services .swiper-slide-next path {
@@ -118,11 +118,11 @@ header {
 }
 
 .swiper-pagination-bullet {
-  @apply inline-block bg-black bg-opacity-15 w-4 h-4 aspect-square rounded-full cursor-pointer transition-[width_height] duration-500;
+  @apply inline-block aspect-square h-4 w-4 cursor-pointer rounded-full bg-black bg-opacity-15 transition-[width_height] duration-500;
 }
 
 .swiper-pagination-bullet-active {
-  @apply inline-flex items-center justify-center w-6 h-6 aspect-square rounded-full border border-spacing-10 border-black after:w-4 after:aspect-square after:bg-black after:inline-block after:rounded-full bg-white;
+  @apply inline-flex aspect-square h-6 w-6 border-spacing-10 items-center justify-center rounded-full border border-black bg-white after:inline-block after:aspect-square after:w-4 after:rounded-full after:bg-black;
 }
 
 .swiper-pagination {

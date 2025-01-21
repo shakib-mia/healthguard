@@ -4,15 +4,55 @@ import Swiper from "swiper";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 
-// Initialize Lenis
-const lenis = new Lenis({
-  autoRaf: true,
-});
+// const lenis = new Lenis({
+//   autoRaf: true,
+// });
 
-AOS.init({
-  once: true,
-  duration: 1000,
-  offset: 0,
+// function raf(time) {
+//   lenis.raf(time);
+//   requestAnimationFrame(raf);
+// }
+
+// requestAnimationFrame(raf);
+
+// AOS.init({
+//   once: true,
+//   duration: 1000,
+//   offset: 0,
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Initialize Lenis for smooth scrolling
+  const lenis = new Lenis({
+    smooth: true,
+    lerp: 0.07,
+    smoothTouch: true,
+  });
+
+  // Ensure AOS animations are recalculated during Lenis scrolling
+  lenis.on("scroll", () => {
+    AOS.refreshHard(); // Forces recalculation of AOS offsets
+  });
+
+  // Request animation frame for smooth scrolling
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  requestAnimationFrame(raf);
+
+  // Initialize AOS after Lenis setup
+  AOS.init({
+    once: true, // Animations run once
+    duration: 800, // Animation duration in ms
+    offset: 150, // Trigger animation slightly earlier
+    easing: "ease-out", // Smooth animation
+  });
+
+  // Refresh AOS offsets after the page fully loads
+  setTimeout(() => {
+    AOS.refreshHard(); // Ensures proper alignment of animations
+  }, 100);
 });
 
 document.addEventListener("DOMContentLoaded", () => {
